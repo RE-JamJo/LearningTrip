@@ -95,6 +95,9 @@ String类代表字符串。同时是Object类的一个子类。Java 程序中的
 - char[] toCharArray() 
     - 将此字符串转换为一个新的字符数组。
 
+- static String valueOf(char[] data) 
+    - 返回 char 数组参数的字符串表示形式。 
+
 - static String valueOf(int i) 
     - 返回 int 参数的字符串表示形式。（把整数转换成一个字符串）
 
@@ -130,4 +133,43 @@ String类代表字符串。同时是Object类的一个子类。Java 程序中的
 - 字符串大小如何比较？
 	- 在字典中，先出现的字符串小，后出现的字符串大
 	- 具体到编程语言，是根据两个字符串从左往右数，第一个对应位置的不同字符，来决定字符串的大小
+
+
+## StringBuffer
+
+我们如果对字符串进行拼接操作，每次拼接，都会构建一个新的String对象，既耗时，又浪费空间。
+
+为解决上述问题，Java语言引入了StringBuffer。
+
+### String 和 StringBuffer的区别
+
+StringBuffer是可变字符缓冲区
+
+### 构造方法
+
+- public StringBuffer() 
+- public StringBuffer(int capacity)
+- public StringBuffer(String str)
+
+### 添加功能
+public StringBuffer append(String str)
+public StringBuffer insert(int offset,String str)
+
+### 删除功能
+public StringBuffer deleteCharAt(int index)
+public StringBuffer delete(int start,int end)
+
+### 替换功能
+public StringBuffer replace(int start,int end,String str)
+
+### 反转功能	 
+public StringBuffer reverse()
+
+### 截取功能
+public String substring(int start)
+public String substring(int start,int end)
+
+截取功能和前面几个功能的不同
+返回值类型是String类型，本身没有发生改变
+
 
